@@ -290,7 +290,9 @@ const ageDog = (req, res) => {
 
     const savePromise = docRef.save();
 
-    return savePromise.then(() => res.json({name:docRef.name,breed:docRef.breed,age:docRef.age}));
+    const resJson = {name:docRef.name,breed:docRef.breed,age:docRef.age};
+
+    return savePromise.then(() => res.json(resJson));
   });
 };
 
